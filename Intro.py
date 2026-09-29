@@ -24,7 +24,7 @@ APPS = [
     dict(title="Cálculo aplicado: el gradiente", category="Fundamentos", kind="Sesión 3",
          description="Explora cómo el gradiente indica hacia dónde mejora una función.",
          url="https://calculo-aplicado-gradiente.streamlit.app",
-         repository="Calculo-aplicado-gradiente", technologies=["Gradiente"], photo="mountain"),
+         repository="Calculo-aplicado-gradiente", technologies=["Gradiente"], photo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX8GxVZ7UeyLFWxeWiC3-llw7fAUh66-G7zPirIxehqA&s=10"),
     dict(title="Detector de anomalías", category="Fundamentos", kind="Sesión 4",
          description="Practica lógica, eficiencia (Big-O) y vectorización para encontrar datos extraños.",
          url="https://detector-anomalias-pujphzyih8brne8nhox5zv.streamlit.app",
