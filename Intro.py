@@ -21,6 +21,16 @@ CATEGORIES = {
 }
 
 APPS = [
+    dict(title="¿Qué fruta es más parecida?", category="Fundamentos", kind="Sesión 2",
+         description="Explora la distancia entre frutas usando vectores y distancia coseno para encontrar cuál es más parecida.",
+         url="https://app-distancia-coseno-app.streamlit.app/",
+         repository="streamlit-distancia-coseno-app", technologies=["Distancia coseno", "Vectores"],
+         repository_url="https://github.com/AndresFGutierrez/streamlit-distancia-coseno-app"),
+    dict(title="Chatbot de frutas con IA", category="Fundamentos", kind="Sesión 2",
+         description="Interactúa con un chatbot creado con Hugging Face y un modelo de lenguaje para responder preguntas sobre frutas y otros temas.",
+         url="https://app-str-app-computacion.streamlit.app/",
+         repository="Streamlit-Str-app-computacion", technologies=["Hugging Face", "LLM", "Chatbot"],
+         repository_url="https://github.com/AndresFGutierrez/Streamlit-Str-app-computacion"),
     dict(title="Cálculo aplicado: el gradiente", category="Fundamentos", kind="Sesión 3",
          description="Explora cómo el gradiente indica hacia dónde mejora una función.",
          url="https://calculo-aplicado-gradiente.streamlit.app",
@@ -164,8 +174,9 @@ def render_card(app, index):
            f'onerror="this.style.display=\'none\'">' if src else "")
     tags = "".join(f'<span class="tag">{esc(t)}</span>' for t in app.get("technologies", []))
     repo = app.get("repository")
-    repo_btn = (f'<a class="btn repo" href="https://github.com/{esc(GITHUB_USER)}/{esc(repo)}" '
-                f'target="_blank" rel="noopener">Repositorio</a>') if repo and GITHUB_USER else ""
+    repo_url = app.get("repository_url") or (f"https://github.com/{esc(GITHUB_USER)}/{esc(repo)}" if repo and GITHUB_USER else "")
+    repo_btn = (f'<a class="btn repo" href="{esc(repo_url)}" '
+                f'target="_blank" rel="noopener">Repositorio</a>') if repo_url else ""
     return (
         f'<div class="card" style="--c1:{c1};--c2:{c2}">'
         f'<div class="cover" style="background:linear-gradient(135deg,{c1},{c2})">'
